@@ -17,3 +17,11 @@ AMQP merupakan singkatan dari Advanced Message Queuing Protocol. AMQP adalah seb
 ![Simulation slow subscriber](images/image4.png)
 
 Total queue adalah 20 setelah menjalakan 5 kali cargo run. Queue meningkat karena peningkatan jumlah event yang didelay untuk diproses oleh subscriber. Karena diperlukan waktu lebih lama untuk memproses setiap pesan, pesan-pesan baru terus bertumpuk di queue broker tanpa segera diproses. 
+
+## Reflection and Running at least three subscribers
+
+![Reflection and Running at least three subscribers](images/image5.png)
+
+![Reflection and Running at least three subscribers](images/image6.png)
+
+Ketika subscriber dijalankan di tiga konsol secara bersamaan, terjadi distribusi pemrosesan yang merata di antara mereka, memungkinkan pesan-pesan yang dikirim oleh subscriber diproses lebih cepat. Total queue berkurang menjadi 15 walaupun publisher dijalankan 10 kali. Spike dalam queue di message broker berkurang, menunjukkan peningkatan dalam kinerja dan skalabilitas sistem secara keseluruhan.
